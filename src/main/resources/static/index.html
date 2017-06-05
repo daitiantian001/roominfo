@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="refresh" content="15">
+		<meta name="viewport" content="width=980">
+		<title>试试行不行</title>
+		<script src="js/mobile-util.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	</head>
+	<body>
+		<ul id="app-1">
+ 			 <li v-for="item in lists">
+				 <div @click="a('+{{ item.url }}+')">
+				 <div class="title">{{ item.title }}</div>
+  				<div class="id"><p>编号：</p>{{ item.id }}</div>
+  				<div class="style"><p>格局：</p>{{ item.style }}</div>
+  				<div class="position"><p>位置：</p>{{ item.position }}</div>
+          <div class="xinxi">
+             <span class="name"><P>姓名：</P>{{ item.name }}</span>
+             <span class="phone"><P>电话：</P>{{ item.phone }}</span>
+          </div>
+          <div class="jiage">
+              <span class="area"><P>单价：</P>{{ item.area }}</span>
+              <span class="price"><P>总价：</P>{{ item.price }}</span>
+          </div>
+				<div class="timeinfo">
+  				<span class="comefrom"><P>来源：</P>{{ item.comefrom }}</span>
+  				<span class="time"><P>时间：</P>{{ item.createtime }}</span>
+					</div>
+			</div>
+  			 </li>
+		</ul>
+	</body>
+
+
+<script src="js/vue.js" type="text/javascript" charset="utf-8"></script><script src="js/axios.js"></script>
+<script src="js/myjs.js"></script>
+</html>

@@ -1,0 +1,24 @@
+server:
+  port: 80
+#  context-path: /
+spring:
+  application:
+    name: coffeestore
+  redis:
+    cluster:
+     #集群配置
+     connectionTimeout: 2000
+     soTimeout: 1000
+     maxAttempts: 5
+     password: 111
+     maxTotal: 15
+     #连接池配置
+     maxidle: 10
+     minidle: 10
+     maxWaitMillis: 1000
+     testOnBorrow: true
+     testOnReturn: false
+     testWhileIdle: false
+     #节点
+     nodes:
+      - 11.11.11.11:7001

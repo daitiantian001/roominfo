@@ -1,0 +1,29 @@
+body{
+	background-color: #EEEEEE;
+}
+ul,li{
+	list-style: none;
+}
+li{
+  margin-left: 20px;
+  border-bottom:5px solid black;
+}
+ul li .title{
+	font-size: 32px;
+	margin-top: 57px;
+	font-family: '宋体';
+	font-weight: 700;
+}
+.style{
+}
+.style,.position,.id,.xinxi,.jiage,.time,.url,.timeinfo{
+	margin-top: 15px;
+}
+.xinxi .phone,.jiage .price,.timeinfo .time{
+	/*float: right;*/
+	margin-left:213px;
+}
+p{
+	font-weight: 700;
+	display: inline;
+}
