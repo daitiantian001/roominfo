@@ -18,7 +18,7 @@ import java.util.Iterator;
 /**
  * Created by daitian on 2017/5/31.
  */
-//@Component
+@Component
 public class Task58Test {
 
     Logger log = Logger.getLogger(Task58Test.class);
