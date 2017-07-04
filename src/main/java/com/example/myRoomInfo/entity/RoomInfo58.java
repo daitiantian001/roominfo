@@ -17,6 +17,15 @@ public class RoomInfo58 {
     private String comefrom;
     private String createtime;
     private String url;
+    private String sendtime;
+
+    public String getSendtime() {
+        return sendtime;
+    }
+
+    public void setSendtime(String sendtime) {
+        this.sendtime = sendtime;
+    }
 
     public String getId() {
         return id;
@@ -120,6 +129,7 @@ public class RoomInfo58 {
                 ",\"comefrom\":" + "\"" + comefrom + "\"" +
                 ",\"createtime\":" + "\"" + createtime + "\"" +
                 ",\"url\":" + "\"" + url + "\"" +
+                ",\"sendtime\":" + "\"" + sendtime + "\"" +
                 "}";
     }
 }

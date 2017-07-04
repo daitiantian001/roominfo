@@ -35,7 +35,7 @@
     methods: {
         fetchData: function () {
             var self = this;
-            axios.get('http://daitiantian.cn/all').then(function (response) {
+            axios.get('http://localhost/all').then(function (response) {
                 self.lists = response.data;
             });
         },

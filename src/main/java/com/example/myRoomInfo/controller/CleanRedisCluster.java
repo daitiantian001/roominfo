@@ -14,10 +14,19 @@ public class CleanRedisCluster {
     @Autowired
     JedisCluster jedisCluster;
 
+//    @Scheduled()
+//    public void reportCurrentTimes() {
+//        jedisCluster.set("id58","0");
+//        jedisCluster.set("idf","0");
+//        jedisCluster.set("idg","0");
+//        System.out.println("操作成功!");
+//    }
+
     @Scheduled(fixedRate = 1000)
     public void reportCurrentTimes() {
         jedisCluster.del("roominfo");
-        jedisCluster.del("ids");
+        jedisCluster.del("id58");
+        jedisCluster.del("id58");
         System.out.println("操作成功!");
     }
 }
