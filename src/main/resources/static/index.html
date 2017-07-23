@@ -1,15 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=980">
-    <title>试试行不行</title>
-    <script src="js/mobile-util.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <!--<link rel="stylesheet" type="text/css" href="css/reset.css"/>-->
-
-    <script type="application/javascript" src="js/sockjs.js"></script>
-    <script type="application/javascript" src="js/stomp.js"></script>
+    <title>多提提意见哈</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sockjs.js"></script>
+    <script src="js/stomp.js"></script>
     <script type="text/javascript">
         function connect() {
             var socket = new SockJS('/roomInfo');
@@ -23,35 +21,53 @@
                 });
             });
         }
-
     </script>
 </head>
 <body onload="connect()">
-<audio id="audio" src="/audio/horse.ogg" style="display: none"></audio>
-<ul id="app-1">
-    <li v-for="item in lists">
-        <div @click="a('+{{ item.url }}+')">
-            <div class="title">{{ item.title }}</div>
-            <div class="id"><p>编号：</p>{{ item.id }}</div>
-            <div class="style"><p>格局：</p>{{ item.style }}</div>
-            <div class="position"><p>位置：</p>{{ item.position }}</div>
-            <div class="xinxi">
-                <span class="name"><P>姓名：</P>{{ item.name }}</span>
-                <span class="phone"><P>电话：</P>{{ item.phone }}</span>
-            </div>
-            <div class="jiage">
-                <span class="area"><P>单价：</P>{{ item.area }}</span>
-                <span class="price"><P>总价：</P>{{ item.price }}</span>
-            </div>
-            <div class="timeinfo">
-                <span class="comefrom"><P>来源：</P>{{ item.comefrom }}</span>
-                <span class="time"><P>时间：</P>{{ item.createtime }}</span>
+<div id="box" class="h4">
+    <audio id="audio" src="/audio/a.ogg" style="display: none"></audio>
+    <div class="panel panel-default" v-for="item in lists">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center h3">
+                <img v-show="item.comefrom=='58同城'" src="img/58.png" style="width: 5%">
+                <img v-show="item.comefrom=='房天下'" src="img/fang.jpg" style="width: 7%">
+                {{ item.title}}
+            </h3>
+            <div style="display: none">
+                {{ item.id}}
             </div>
         </div>
-    </li>
-</ul>
-</body>
-<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+        <table class="table text-center">
+            <tr>
+                <td class="col-xs-1"><strong>姓名：</strong></td>
+                <td class="col-xs-5">{{ item.name }}</td>
+                <td class="col-xs-1"><strong>电话：</strong></td>
+                <td class="col-xs-5">{{ item.phone }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-1"><strong>单价：</strong></td>
+                <td class="col-xs-5">{{ item.area }}</td>
+                <td class="col-xs-1"><strong>总价：</strong></td>
+                <td class="col-xs-5">{{ item.price }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-1"><strong>格局：</strong></td>
+                <td class="col-xs-5">{{ item.style }}</td>
+                <td class="col-xs-1"><strong>位置：</strong></td>
+                <td class="col-xs-5">{{ item.position }}</td>
+            </tr>
+            <tr>
+                <td class="col-xs-1"><strong>时间：</strong></td>
+                <td class="col-xs-5">{{ item.createtime }}</td>
+                <td class="col-xs-1"><strong>详情：</strong></td>
+                <td class="col-xs-5"><a class="btn btn-default" @click="add(item.url)"role="button">查看</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="js/vue.min.js"></script>
+<!--<script src="js/vue-resource.min.js"></script>-->
 <script src="js/axios.js" type="text/javascript"></script>
-<script src="js/myjs.js" type="text/javascript"></script>
+<script src="js/my.js"></script>
+</body>
 </html>

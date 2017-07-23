@@ -69,13 +69,13 @@ public class TaskFangTest {
                 roomInfo58.setPrice(next.select("p[class=mt5 alignR]").text());
                 roomInfo58.setArea(next.select("p[class=danjia alignR mt5]").text().replaceAll("�O", "m2"));
                 roomInfo58.setSendtime("新上");
-                String url = fangs + "/chushou/" + newId + ".htm";
+                String url = fangs + "chushou/" + newId + ".htm";
                 roomInfo58.setUrl(url);
 
                 Document doc = Jsoup.connect(url).get();
-                Elements nexts = doc.getElementsByClass("bookTel");
-                roomInfo58.setPhone(nexts.select("strong").text());
-                roomInfo58.setName("" + nexts.select("a").text().replaceAll("业主", ""));
+                Elements nexts = doc.getElementsByClass("trlcont");
+                roomInfo58.setPhone(nexts.select("span[class=pnum]").get(0).text());
+                roomInfo58.setName(nexts.select("div[class=btn1_mod yyKanfBtn downBtn]").text());
                 s = roomInfo58.toString();
                 jedisCluster.lpush("roominfo", s);
                 template.convertAndSend("/topic/rooms", s);

@@ -3,7 +3,7 @@ server:
   context-path: /
 spring:
   application:
-    name: coffeestore
+    name: roominfo
   redis:
     cluster:
      #集群配置

@@ -1,6 +1,5 @@
 package com.example.myRoomInfo.common;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

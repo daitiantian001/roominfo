@@ -74,7 +74,7 @@ public class TaskGangji {
                 roomInfo58.setSendtime(sendtime);
                 roomInfo58.setPhone(e.select("div[class=c_phone f-clear]").attr("data-phone"));
 
-                System.out.println(roomInfo58);
+//                System.out.println(roomInfo58);
                 //TODO 如果手机号是null 放地址
                 //pnumber=jedisCluster.sadd("phones", phone); 屏蔽某人发的信息
                 s = roomInfo58.toString();

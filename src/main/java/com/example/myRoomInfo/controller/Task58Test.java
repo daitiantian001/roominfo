@@ -38,7 +38,7 @@ public class Task58Test {
         try {
             //获取最新消息
             Document document = Jsoup.connect(one).get();
-            if(!document.hasText()){
+            if (!document.hasText()) {
                 log.info("58数据为空");
             }
             Elements element = document.getElementsByClass("house-list-wrap");

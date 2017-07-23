@@ -1,7 +1,5 @@
 package com.example.myRoomInfo.entity;
 
-import java.util.Date;
-
 /**
  * Created by daitian on 2017/6/1.
  */
