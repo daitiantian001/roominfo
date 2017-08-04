@@ -1,8 +1,13 @@
 package com.example.myRoomInfo.controller;
 
+import org.springframework.beans.factory.NamedBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.scheduling.annotation.Scheduled;
 import redis.clients.jedis.JedisCluster;
+
+import javax.annotation.Resource;
 
 /**
  * Created by daitian on 2017/6/2.
@@ -12,6 +17,10 @@ public class CleanRedisCluster {
 
     @Autowired
     JedisCluster jedisCluster;
+
+    @Resource(name = "redisTemplate")
+    ValueOperations ops;
+
 
 //    @Scheduled()
 //    public void reportCurrentTimes() {
@@ -23,6 +32,7 @@ public class CleanRedisCluster {
 
     @Scheduled(fixedRate = 1000)
     public void reportCurrentTimes() {
+        ops.set("11","22");
         jedisCluster.del("roominfo");
         jedisCluster.del("id58");
         jedisCluster.del("id58");
